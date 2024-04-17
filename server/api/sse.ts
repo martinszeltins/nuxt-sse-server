@@ -11,7 +11,8 @@ export default defineEventHandler(async (event) => {
         event.node.res.write(`data: ${JSON.stringify(data)}\n\n`);
     }
 
-    setInterval(() => sendEvent({ message: 'ping' }), 3000)
+    sendEvent({ message: 'hello' })
+    setInterval(() => sendEvent({ message: 'ping' }), 1000)
 
     // Keep the connection open
     event._handled = true;
